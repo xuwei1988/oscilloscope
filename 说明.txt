@@ -1,0 +1,1 @@
+1、在SciThread里面存在两个全局变量 newdata/record是线程不安全的。暂时没有管

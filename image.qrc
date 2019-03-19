@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/application-exit.png</file>
+        <file>images/clear.png</file>
+        <file>images/connect.png</file>
+        <file>images/disconnect.png</file>
+        <file>images/curve.png</file>
+        <file>images/curvedown.bmp</file>
+        <file>images/curveup.bmp</file>
+        <file>images/curveZoomin.bmp</file>
+        <file>images/curveZoomout.bmp</file>
+        <file>images/settings.png</file>
+        <file>images/horizonMesure.bmp</file>
+        <file>images/verticalMesure.bmp</file>
+        <file>images/Freq.png</file>
+        <file>images/Max.png</file>
+        <file>images/Min.png</file>
+        <file>images/RMS.png</file>
+        <file>images/Avg.png</file>
+        <file>images/error.png</file>
+        <file>images/event.png</file>
+        <file>images/warning.png</file>
+        <file>images/event_icon.png</file>
+        <file>images/scope_icon.png</file>
+        <file>images/event_setting.png</file>
+        <file>images/delete_all.png</file>
+        <file>images/delete_current.png</file>
+        <file>images/save_all.png</file>
+        <file>images/save_current.png</file>
+        <file>images/delete.bmp</file>
+        <file>images/open_file.png</file>
+        <file>images/screen.JPG</file>
+        <file>images/welcome.png</file>
+        <file>images/screen1.JPG</file>
+    </qresource>
+</RCC>
