@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -126,6 +126,207 @@
         <property name="text">
          <string/>
         </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>USB-CAN</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>271</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Device Parameter</string>
+     </property>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>30</y>
+        <width>141</width>
+        <height>79</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QComboBox" name="canDeviceIndexBox">
+         <item>
+          <property name="text">
+           <string>0</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>2</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>3</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>4</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="canIndexBox">
+         <item>
+          <property name="text">
+           <string>0</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="canBaudRateBox">
+         <item>
+          <property name="text">
+           <string>1000Kbs</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>800Kbs</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>500Kbs</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>250Kbs</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>100Kbs</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>50Kbs</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>106</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Device Index:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>CAN Index:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>BaudRate:</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="canConnectButton">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>210</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Connect</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>231</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Device type:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="canDeviceTypeBox">
+        <item>
+         <property name="text">
+          <string>USBCAN-E-U</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>USBCAN-2E-U</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>USBCAN-4E-U</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>USBCAN1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>USBCAN2</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>

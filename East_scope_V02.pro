@@ -48,7 +48,8 @@ SOURCES += \
     recorddata.cpp \
     customtablemodel.cpp \
     eventtable.cpp \
-    eventselectdialog.cpp
+    eventselectdialog.cpp \
+    canthread.cpp
 
 HEADERS += \
     datasource.h \
@@ -71,11 +72,17 @@ HEADERS += \
     recorddata.h \
     customtablemodel.h \
     eventtable.h \
-    eventselectdialog.h
+    eventselectdialog.h \
+    ControlCAN.h \
+    canthread.h
 
 FORMS += \
     chanelpickdialog.ui \
     connectdialog.ui
+
+win32: LIBS += -L$$PWD/./ -lControlCAN
+INCLUDEPATH += $$PWD/.
+DEPENDPATH += $$PWD/.
 
 RESOURCES += \
     image.qrc \

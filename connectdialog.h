@@ -6,6 +6,10 @@
 
 #include "scithread.h"
 #include "chanelpickdialog.h"
+
+/*2019.07.03 */
+#include "canthread.h"
+
 QT_USE_NAMESPACE
 
 QT_BEGIN_NAMESPACE
@@ -52,6 +56,12 @@ private slots:
     void processTimeout(const QString &s);
     void processImforGet();
 
+/*2019.07.03 */
+private slots:
+    void canApply();
+    void canProcessError(int error);
+    void canProcessMsg(int number);
+
 public slots:
     void processChannelPicked();
 
@@ -73,6 +83,8 @@ private:
     QIntValidator *intValidator;
     SerialSettings serialSettings;
     SciThread thread;
+    /*2019.07.03 */
+    CanThread canThread;
 
     ChanelPickDialog *pickDialog = nullptr;
 };

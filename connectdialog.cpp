@@ -5,7 +5,6 @@
 //#include <QtSerialPort/QSerialPort>
 #include <QIntValidator>
 #include <QLineEdit>
-
 #include <QDebug>
 
 QT_USE_NAMESPACE
@@ -30,7 +29,10 @@ ConnectDialog::ConnectDialog(QWidget *parent) :
     connect(&thread, &SciThread::timeout, this, &ConnectDialog::processTimeout);
     connect(&thread, &SciThread::imforGet, this, &ConnectDialog::processImforGet);
 
-
+    /* 2019.07.03 */
+    connect(ui->canConnectButton, &QPushButton::clicked, this, &ConnectDialog::canApply);
+    connect(&canThread, &CanThread::signal_CanData, this, &ConnectDialog::canProcessMsg);
+    connect(&canThread, &CanThread::signal_CanError, this, &ConnectDialog::canProcessError);
 
     fillPortsParameters();
     fillPortsInfo();
@@ -212,9 +214,80 @@ void ConnectDialog::showResponse(const QString &s)
     ui->label->setText(tr("%1").arg(s));
 }
 
+/* 2019.07.03 */
+void ConnectDialog::canApply()
+{
+    DWORD type;
+    DWORD index = 0;
+    DWORD number = 0;
+    uint32_t id = 0;
+    uint32_t baud = 0;
 
+    switch(ui->canDeviceTypeBox->currentIndex()){
+        case 0:{
+            type = VCI_USBCAN_E_U;
+            break;
+        }
+        case 1:{
+            type = VCI_USBCAN_2E_U;
+            break;
+        }
+        case 2:{
+            type = VCI_USBCAN_4E_U;
+            break;
+        }
+        case 3:{
+            type = VCI_USBCAN1;
+            break;
+        }
+        case 4:{
+            type = VCI_USBCAN2;
+            break;
+        }
+    }
 
+    index = ui->canDeviceIndexBox->currentIndex();
+    number = ui->canIndexBox->currentIndex();
+    id = 0;
 
+    switch(ui->canBaudRateBox->currentIndex()) {
+        case 0:{
+            baud = 0x060003;
+            break;
+        }
+        case 1:{
+            baud = 0x060004;
+            break;
+        }
+        case 2:{
+            baud = 0x060007;
+            break;
+        }
+        case 3:{
+            baud = 0x1C0008;
+            break;
+        }
+        case 4:{
+            baud = 0x160023;
+            break;
+        }
+        case 5:{
+            baud = 0x1C002C;
+            break;
+        }
+    }
+    canThread.init(type,index,number,id, baud);
+}
+
+void ConnectDialog::canProcessError(int error)
+{
+    qDebug()<<"Error Message:"<<error;
+}
+
+void ConnectDialog::canProcessMsg(int number)
+{
+    qDebug()<<"total Message: "<<canThread.frameList.count();
+}
 
 
 
