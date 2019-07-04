@@ -9,6 +9,8 @@
 
 /*2019.07.03 */
 #include "canthread.h"
+/*2019.07.04 */
+#include <canframe.h>
 
 QT_USE_NAMESPACE
 
@@ -85,6 +87,8 @@ private:
     SciThread thread;
     /*2019.07.03 */
     CanThread canThread;
+    /*2019.07.04 */
+    CanFrame canFrame;
 
     ChanelPickDialog *pickDialog = nullptr;
 };

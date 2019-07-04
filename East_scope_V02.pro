@@ -49,7 +49,8 @@ SOURCES += \
     customtablemodel.cpp \
     eventtable.cpp \
     eventselectdialog.cpp \
-    canthread.cpp
+    canthread.cpp \
+    canframe.cpp
 
 HEADERS += \
     datasource.h \
@@ -74,7 +75,8 @@ HEADERS += \
     eventtable.h \
     eventselectdialog.h \
     ControlCAN.h \
-    canthread.h
+    canthread.h \
+    canframe.h
 
 FORMS += \
     chanelpickdialog.ui \

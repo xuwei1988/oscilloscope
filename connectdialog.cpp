@@ -286,7 +286,20 @@ void ConnectDialog::canProcessError(int error)
 
 void ConnectDialog::canProcessMsg(int number)
 {
+    Q_UNUSED(number);
     qDebug()<<"total Message: "<<canThread.frameList.count();
+    canFrame.refreshFrame(canThread.frameList);
+
+    /* Debug 测试计算正确性 */
+//    for(int i = 0; i < canThread.frameList.count(); i++) {
+//        qDebug()<<canThread.frameList.at(i).Data[0]<<canThread.frameList.at(i).Data[1]
+//                <<canThread.frameList.at(i).Data[2]<<canThread.frameList.at(i).Data[3]
+//                <<canThread.frameList.at(i).Data[4]<<canThread.frameList.at(i).Data[5]
+//                <<canThread.frameList.at(i).Data[6]<<canThread.frameList.at(i).Data[7];
+//    }
+
+
+    canThread.frameList.clear();
 }
 
 
